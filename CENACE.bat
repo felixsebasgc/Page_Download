@@ -7,9 +7,11 @@
 "C:\Program Files (x86)\GnuWin32\bin\wget.exe" wget -E -H -k -r -p "C:\Users\felix\Downloads\CENACE_PROYECTO" --no-check-certificate https://www.cenace.gob.ec/info-operativa/InformacionOperativa.htm
 
 ::Copia del archivo a la carpeta de almacenamiento
-xcopy "C:\Users\felix\Downloads\CENACE_PROYECTO\www.cenace.gob.ec\info-operativa\InformacionOperativa.htm" "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS"
-::Renombra al archivo
-ren "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS\InformacionOperativa.htm" "%DATE%_%time::=-%.htm"
+mkdir "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS\%DATE%_%time::=-%"
+xcopy /s "C:\Users\felix\Downloads\CENACE_PROYECTO\www.cenace.gob.ec\info-operativa" "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS\%DATE%_%time::=-%"
+	::Renombra al archivo
+	::ren "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS\InformacionOperativa.htm" "%DATE%_%time::=-%.htm"
+	::ren "C:\Users\felix\Downloads\CENACE_PROYECTO\DATOS_ORGANIZADOS\InformacionOperativa_archivos" "%DATE%_%time::=-%"
 
 
 exit'
